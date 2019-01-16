@@ -1,0 +1,16 @@
+﻿@model SecondVersion.Models.Customer
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail of Customers</h2>
+
+<div>
+    
+    <h3>@Model.Name</h3>
+    <h4><b>MemberShipType:</b>@Model.MemberShipType.DurationInMonths</h4>
+    <h4><b>DateOfBirth:</b> @Model.DateOfBirth </h4>
+    
+</div>
+        

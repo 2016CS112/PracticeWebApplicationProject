@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SecondVersion.Models.Movie>
+
+@{
+    ViewBag.Title = "Movies";
+}
+
+<h2>Movies</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+      
+        
+        <th>
+            Genre
+        </th>
+    </tr>
+
+@foreach (var Movie in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink( Movie.Name ,"Detail"  + "/ "  + Movie.Id  , "Movie")
+        </td>
+        <td>
+            @Movie.Genre.MovieType
+        </td>
+        
+        
+        <td>
+           
+        </td>
+    </tr>
+}
+
+</table>

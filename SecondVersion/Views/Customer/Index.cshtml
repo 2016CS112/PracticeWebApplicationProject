@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SecondVersion.Models.Customer>
+
+@{
+    ViewBag.Title = "Customers";
+}
+
+<h2>Customers</h2>
+
+
+@if (Model == null)
+{
+    <h3>
+        Not Found Any Customer;
+        </h3>
+}
+else
+{
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            Discount Rate
+        </th>
+        
+        <th>
+            MemberShipType
+        </th>
+    </tr>
+
+
+
+@foreach (var customer in Model)
+{
+    <tr>
+        <td>
+            @Html.ActionLink(customer.Name, "Detail" + "/" + customer.Id, "Customer")
+        </td>
+        <td>
+            @customer.MemberShipType.DiscountRate%
+        </td>
+        
+            @if(customer.MemberShipType.DurationInMonths==1)
+            {
+                <td>Pay as you go</td>
+            }
+            else
+             {
+                <td>
+                    Monthly
+                    </td>
+
+                }
+       
+    </tr>
+}
+
+</table>
+}
+
