@@ -15,4 +15,4 @@ namespace SecondVersion.Models
 
         public int DiscountRate { get; set; }
     }
-}
+} 
